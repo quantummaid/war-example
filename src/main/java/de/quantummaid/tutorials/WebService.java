@@ -11,7 +11,7 @@ public final class WebService {
 
     public static QuantumMaid createQuantumMaid(final int port) {
         return QuantumMaid.quantumMaid()
-                .get("/helloworld", GreetingUseCase.class)
+                .get("/hello/<name>", GreetingUseCase.class)
                 .withLocalHostEndpointOnPort(port);
     }
 }
