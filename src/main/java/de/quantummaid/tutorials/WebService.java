@@ -6,12 +6,11 @@ public final class WebService {
     private static final int PORT = 8080;
 
     public static void main(final String[] args) {
-        createQuantumMaid(PORT).run();
+        createQuantumMaid().withLocalHostEndpointOnPort(PORT).run();
     }
 
-    public static QuantumMaid createQuantumMaid(final int port) {
+    public static QuantumMaid createQuantumMaid() {
         return QuantumMaid.quantumMaid()
-                .get("/hello/<name>", GreetingUseCase.class)
-                .withLocalHostEndpointOnPort(port);
+                .get("/hello/<name>", GreetingUseCase.class);
     }
 }

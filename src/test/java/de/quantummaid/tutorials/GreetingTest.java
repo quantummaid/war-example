@@ -14,7 +14,7 @@ public final class GreetingTest implements QuantumMaidProvider {
 
     @Override
     public QuantumMaid provide(final int port) {
-        return createQuantumMaid(port);
+        return createQuantumMaid().withLocalHostEndpointOnPort(port);
     }
 
     @Test
